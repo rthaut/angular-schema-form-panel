@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- node
+sudo: false
+deploy:
+  provider: npm
+  email: rthaut@gmail.com
+  api_key:
+    secret:
+      secure: xe1L+zppjzaCYjkMVHfe/COP0jJQNR9Y/scw6sgJpRdg2my6UkAvMRLrkefQ65Ll6czyyK0/cgiyXvSxL/NryD6jgPMa3Clvb02AHX38qMph6+va3Jc6XADzEopOPbsPaK/KQ+yr4AXWFWGW7VOcIWckx0WvGQeJ1RDU3faFwbqUeWkjtrTRGoMhD0MZqKUZ3ZJYxcy1baKRjOO2F6sktNbXNzvTzv01d0fxnXqKzlyUAy+XwRBe1KUUjsTrY7l60+zFDSHl/SGoK1u+NjnzcsMBYIyufLJBfsSt4WOwOQlbWUvGAdkgi5K6TAlSKH5x1o2iD92+2ayGAUNmdMl8CRTczQ2nMGOVbxpyY+dPuongLCnyPTxZv3XOfqXkGY13Xc3uAB6w2V7UzCtMlvcKrwoDXxTB7kJSwzA82PxY2rQSSBKn7Ix1l+yvWZaNdHezkSoadyZvBzTbsCtEK9OVu3Rci27s0AIMJUdspjQFBesI+vBydgcz7/9+o24koRfsSWL3OCZ4d+WO1blf2Mon4EqnaP+9QqIBOcW/NP598IfTvy22eCrY2p/4NVZadlTOtxMhRrKv51U9euAk28s0qZOU14Qodu/j7oDKOeF7mXYmMNQLQLrMOwNCv82CO35kVRuDPILHO3oCDIgdz+vkJ905uCv+FNq8VkUOMlIDgCs=
+  on:
+    tags: true
+    repo: rthaut/angular-schema-form-panel
