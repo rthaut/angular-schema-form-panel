@@ -2,7 +2,7 @@
 
 > Adds support for Bootstrap's custom [panel component](https://getbootstrap.com/docs/3.3/components/#panels) in [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form)
 
-View the <a href="https://codepen.io/rthaut/full/xzReMB/">Live Demo on CodePen</a> for examples.
+***View the <a href="https://codepen.io/rthaut/full/xzReMB/">Live Demo on CodePen</a> for examples.***
 
 ## Installation
 
@@ -43,7 +43,7 @@ $scope.form = [
 ]
 ```
 
-You can also make a panel accordion by using `panel-group` as the `type` (make sure the `items` of your `panel-group` are `panel` objects) in your form's JSON definition:
+You can also make an [accordion of panels](https://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion) by using `panel-group` as the `type` (make sure the `items` of your `panel-group` are `panel` objects) in your form's JSON definition:
 
 ```js
 $scope.form = [
