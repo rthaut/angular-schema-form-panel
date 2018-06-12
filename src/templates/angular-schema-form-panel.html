@@ -1,0 +1,21 @@
+<div class="panel panel-{{form.style || 'default'}} schema-form-panel {{::form.panelClass}}" ng-init="panelId = $id" ng-id="Panel{{panelId}}">
+
+    <div class="panel-heading {{::form.headingClass}}" role="tab" id="PanelHeading{{panelId}}" ng-hide="form.noHeading === true && !form.collapsible">
+
+        <span class="panel-title" ng-if="!form.collapsible">{{form.title}}</span>
+
+        <span class="panel-title" ng-if="form.collapsible" ng-init="collapsed = (form.collapsed === true)">
+            <a role="button" data-toggle="collapse" data-parent="#PanelGroup{{groupId || panelId}}" href="#PanelContent{{panelId}}" aria-expanded="{{!collapsed}}" aria-controls="PanelContent{{panelId}}">{{form.title || 'Form Panel ' + panelId}}</a>
+        </span>
+
+    </div>
+
+    <div id="PanelContent{{panelId}}" class="panel-collapse" ng-class="{'collapse': (form.collapsible === true), 'in': form.collapsed !== true}" role="tabpanel" aria-labelledby="PanelHeading{{panelId}}">
+        <div class="panel-body {{::form.bodyClass}}" ng-if="form.list !== true" sf-field-transclude="items"></div>
+        <ul class="list-group {{::form.bodyClass}}" ng-if="form.list === true">
+            <li class="list-group-item" sf-repeat-transclude="items"></li>
+        </ul>
+        <div class="panel-footer {{::form.footerClass}}" ng-hide="form.noFooter === true || !form.footer.length" ng-bind-html="form.footer"></div>
+    </div>
+
+</div>

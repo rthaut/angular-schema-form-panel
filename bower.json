@@ -1,0 +1,36 @@
+{
+  "name": "angular-schema-form-panel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "rthaut",
+  "main": [
+    "dist/angular-schema-form-panel.js"
+  ],
+  "keywords": [
+    "angular-schema-form",
+    "angular-schema-form-add-on",
+    "bootstrap",
+    "panel",
+    "decorator",
+    "form",
+    "json",
+    "schema"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.10",
+    "angular-sanitize": "1.6.10",
+    "angular-schema-form": "^0.8.13",
+    "angular-schema-form-bootstrap": "^0.2.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "1.9.1",
+    "objectpath": "1.0.5",
+    "tv4": "1.0.17"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "angular-schema-form-panel",
+  "title": "Angular Schema Form Bootstrap Panel Decorator",
+  "version": "1.0.0",
+  "description": "Bootstrap Panel Decorator for Angular Schema Form",
+  "author": "Ryan Thaut <rthaut@gmail.com> (http://ryanthaut.com)",
+  "homepage": "https://github.com/rthaut/angular-schema-form-panel#readme",
+  "license": "MIT",
+  "main": "dist/angular-schema-form-panel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular-schema-form",
+    "angular-schema-form-add-on",
+    "bootstrap",
+    "panel",
+    "decorator",
+    "form",
+    "json",
+    "schema"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rthaut/angular-schema-form-panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rthaut/angular-schema-form-panel/issues"
+  },
+  "devDependencies": {
+    "bower": "^1.8.4",
+    "generator-angular-schema-form-add-on": "^0.1.4",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.2.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^3.0.0",
+    "streamqueue": "^1.1.2",
+    "yo": "^2.0.2"
+  }
+}

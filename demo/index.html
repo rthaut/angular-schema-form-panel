@@ -1,0 +1,241 @@
+<html>
+
+    <head>
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/tv4/tv4.js"></script>
+        <script src="../bower_components/objectpath/lib/ObjectPath.js"></script>
+        <script src="../bower_components/angular-schema-form/dist/schema-form.js"></script>
+        <script src="../bower_components/angular-schema-form/dist/bootstrap-decorator.js"></script>
+        <script src="../dist/angular-schema-form-panel.js"></script>
+
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+
+        <script>
+            angular.module('schemaFormPanelApp', ["schemaForm", "schemaFormPanel"]).controller('schemaFormPanelCtrl', function ($scope) {
+
+                $scope.schema = {
+                    type: "object",
+                    properties: {
+                        name: {
+                            key: "name",
+                            title: "Name",
+                            description: "First and Last Name",
+                            type: "string",
+                            pattern: /^\w+\s\w+$/
+                        },
+                        email: {
+                            key: "email",
+                            title: "Email Address",
+                            description: "Totally used for spam",
+                            type: "string",
+                            pattern: /^[^@]+@\w+(?:\.\w+)+$/
+                        }
+                    },
+                    required: ["name", "email"]
+                }
+
+                $scope.form = [
+                    {
+                        type: "panel",
+                        style: "success",
+                        title: "My Basic Panel",
+                        footer: "My Panel Footer",
+                        items: ["name", "email"]
+                    },
+                    {
+                        type: "help",
+                        helpvalue: "<hr/>"
+                    },
+                    {
+                        type: "panel",
+                        title: "My List Group Panel",
+                        list: true,
+                        items: [
+                            {
+                                type: "help",
+                                helpvalue: "<h4>Each value in <code>items</code> is an individual list-group-item.</h4>"
+                            },
+                            "name",
+                            {
+                                type: "help",
+                                helpvalue: "<div class='alert alert-success'>Just another item in this panel's list group...</div>"
+                            },
+                            "email"
+                        ]
+                    },
+                    {
+                        type: "help",
+                        helpvalue: "<hr/>"
+                    },
+                    {
+                        type: "panel",
+                        style: "info",
+                        title: "My Collapsible Panel (Initially Open)",
+                        collapsible: true,
+                        items: [{
+                            type: "help",
+                            helpvalue: "<p>This is a collapsible panel that is initially open (which is the default behavior).</p>"
+                        }]
+                    },
+                    {
+                        type: "help",
+                        helpvalue: "<hr/>"
+                    },
+                    {
+                        type: "panel",
+                        style: "info",
+                        title: "My Collapsible Panel (Initially Closed)",
+                        collapsible: true,
+                        collapsed: true,
+                        items: [{
+                            type: "help",
+                            helpvalue: "<p>This is a collapsible panel that is initially closed.</p>"
+                        }]
+                    },
+                    {
+                        type: "help",
+                        helpvalue: "<hr/>"
+                    },
+                    {
+                        type: "panel",
+                        style: "warning",
+                        title: "My Collapsible Panel with a Footer and List Group",
+                        footer: "<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><footer>Someone famous in <cite title='Source Title'>Source Title</cite></footer></blockquote>",
+                        footerClass: "text-danger",
+                        collapsible: true,
+                        list: true,
+                        items: [
+                            {
+                                type: "help",
+                                helpvalue: "<em>This collapsible panel has a footer and a list group</em>"
+                            },{
+                                type: "help",
+                                helpvalue: "<strong>Did you see the HTML in the footer?</strong>"
+                            }
+                        ]
+                    },
+                    {
+                        type: "help",
+                        helpvalue: "<hr/>"
+                    },
+                    {
+                        type: "panel-group",
+                        items: [
+                            {
+                                type: "panel",
+                                style: "success",
+                                title: "My Grouped Panel 1",
+                                collapsible: true,
+                                items: [{
+                                    type: "help",
+                                    helpvalue: "<p>This panel is part of group</p>"
+                                }]
+                            },
+                            {
+                                type: "panel",
+                                style: "warning",
+                                title: "My Grouped Panel 2",
+                                footer: "My Panel Footer",
+                                collapsible: true,
+                                collapsed: true,
+                                items: [{
+                                    type: "help",
+                                    helpvalue: "<p>This panel is also part of group</p>"
+                                }]
+                            },
+                            {
+                                type: "panel",
+                                style: "warning",
+                                title: "My Third Grouped Panel",
+                                footer: "My Panel Footer",
+                                collapsible: true,
+                                collapsed: true,
+                                items: [{
+                                    type: "help",
+                                    helpvalue: "<p>This panel is part of the group, too</p>"
+                                }]
+                            }
+                        ]
+                    }
+                ]
+
+                $scope.model = {};
+
+                $scope.debug = {
+                    schema: angular.copy($scope.schema),
+                    form: angular.copy($scope.form)
+                };
+
+            });
+        </script>
+        <title>Angular Schema Form Panel Testing</title>
+    </head>
+
+    <body ng-app="schemaFormPanelApp">
+
+        <div class="container-fluid" ng-controller="schemaFormPanelCtrl">
+            <div class="page-header text-center">
+                <h1>Angular Schema Form Panel Testing</h1>
+                <p class="lead">Examples of the <a href="https://github.com/rthaut/angular-schema-form-panel/">Bootstrap Panel Decorator</a> for <a href="https://github.com/json-schema-form/angular-schema-form">Angular Schema Form</a></p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-md-6 form">
+
+                    <form sf-schema="schema" sf-form="form" sf-model="model"></form>
+
+                </div>
+
+                <div class="col-xs-12 col-md-6 debug">
+
+                    <div class="panel-group" id="debugPanelGroup" role="tablist" aria-multiselectable="false">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingModal">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#debugPanelGroup" href="#panelModal" aria-expanded="false" aria-controls="panelModal">Modal</a>
+                                </h4>
+                            </div>
+                            <div id="panelModal" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingModal">
+                                <div class="panel-body">
+                                    <pre><code>{{model | json}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingForm">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#debugPanelGroup" href="#panelForm" aria-expanded="true" aria-controls="panelForm">Form</a>
+                                </h4>
+                            </div>
+                            <div id="panelForm" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingForm">
+                                <div class="panel-body">
+                                    <pre><code>{{debug.form | json}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSchema">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#debugPanelGroup" href="#panelSchema" aria-expanded="false" aria-controls="panelSchema">Schema</a>
+                                </h4>
+                            </div>
+                            <div id="panelSchema" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <pre><code>{{debug.schema | json}}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>
