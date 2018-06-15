@@ -30,7 +30,10 @@
     "angular-schema-form-bootstrap": "^0.2.0",
     "bootstrap": "^3.3.7",
     "jquery": "1.9.1",
-    "objectpath": "1.0.5",
+    "objectpath": "~1.1.0",
     "tv4": "1.0.17"
+  },
+  "resolutions": {
+    "objectpath": "~1.1.0"
   }
 }
