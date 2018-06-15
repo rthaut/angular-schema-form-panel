@@ -1,7 +1,5 @@
 /* global angular */
-var schemaFormPanel = angular.module('schemaFormPanel', ['schemaForm', 'templates']);
-
-schemaFormPanel.config([
+angular.module('schemaFormPanel', ['schemaForm']).config([
     'schemaFormProvider',
     'schemaFormDecoratorsProvider',
     'sfBuilderProvider',

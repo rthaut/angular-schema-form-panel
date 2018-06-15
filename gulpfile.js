@@ -30,11 +30,11 @@ gulp.task('minify', function () {
     var stream = streamqueue({
                 objectMode: true
             },
+            gulp.src(files),
             gulp.src(['src/templates/**/*.html']).pipe(templateCache({
-                standalone: true,
+                module: 'schemaFormPanel',
                 root: 'src/templates/',
-            })),
-            gulp.src(files)
+            }))
         )
         .pipe(concat('angular-schema-form-panel.js'))
         .pipe(gulp.dest('./dist'))
