@@ -4,13 +4,21 @@
 
 ***View the <a href="https://codepen.io/rthaut/full/xzReMB/">Live Demo on CodePen</a> for examples.***
 
+* * *
+
+[![Build status][travis-image]][travis-url] [![Dependencies status][david-image]][david-url] [![NPM version][npm-image]][npm-url] ![Bower version][bower-image]
+
 ## Installation
 
-Install `angular-schema-form-panel` via npm or bower:
+Install `angular-schema-form-panel` via npm or bower.
+
+### NPM
 
 ```sh
 npm install angular-schema-form-panel
 ```
+
+### Bower
 
 ```sh
 bower install angular-schema-form-panel
@@ -88,3 +96,11 @@ You can use the following options on each `panel` object. All options are option
 | `bodyClass`    | `string` | Specifies additional class(es) to add to the panel's body element. |
 | `footerClass`  | `string` | Specifies additional class(es) to add to the panel's footer element. |
 | `list`         | `bool`   | Specifies if the `items` should be rendered as elements of a [list group](https://getbootstrap.com/docs/3.3/components/#panels-list-group). <br> Defaults to `false`. |
+
+[travis-url]: http://travis-ci.com/rthaut/angular-schema-form-panel
+[travis-image]: https://travis-ci.com/rthaut/angular-schema-form-panel.svg?branch=master
+[npm-url]: https://npmjs.org/package/angular-schema-form-panel
+[npm-image]: https://badge.fury.io/js/angular-schema-form-panel.svg
+[bower-image]: https://badge.fury.io/bo/angular-schema-form-panel.svg
+[david-url]: https://david-dm.org/rthaut/angular-schema-form-panel
+[david-image]: https://david-dm.org/rthaut/angular-schema-form-panel/dev-status.svg
