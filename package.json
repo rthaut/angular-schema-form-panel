@@ -8,7 +8,10 @@
   "license": "MIT",
   "main": "dist/angular-schema-form-panel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "gulp default",
+    "build": "gulp minify",
+    "test:watch": "karma start",
+    "test": "karma start --log-level info --auto-watch false --single-run"
   },
   "keywords": [
     "angular-schema-form",
@@ -28,7 +31,9 @@
     "url": "https://github.com/rthaut/angular-schema-form-panel/issues"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.10",
     "bower": "^1.8.4",
+    "chai": "^4.1.2",
     "generator-angular-schema-form-add-on": "^0.1.4",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.2.1",
@@ -38,6 +43,12 @@
     "gulp-rename": "^1.2.3",
     "gulp-server-livereload": "^1.9.2",
     "gulp-uglify": "^3.0.0",
+    "karma": "^2.0.2",
+    "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "mocha": "^5.2.0",
     "streamqueue": "^1.1.2",
     "yo": "^2.0.2"
   }
