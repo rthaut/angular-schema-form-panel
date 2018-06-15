@@ -1,10 +1,7 @@
 language: node_js
-
 node_js:
 - node
-
 sudo: false
-
 before_script:
 - npm install -g gulp-cli
 - npm install -g bower
@@ -12,13 +9,11 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 script: npm run build && npm run test
-
 deploy:
   provider: npm
   email: rthaut@gmail.com
   api_key:
-    secret:
-      secure: xe1L+zppjzaCYjkMVHfe/COP0jJQNR9Y/scw6sgJpRdg2my6UkAvMRLrkefQ65Ll6czyyK0/cgiyXvSxL/NryD6jgPMa3Clvb02AHX38qMph6+va3Jc6XADzEopOPbsPaK/KQ+yr4AXWFWGW7VOcIWckx0WvGQeJ1RDU3faFwbqUeWkjtrTRGoMhD0MZqKUZ3ZJYxcy1baKRjOO2F6sktNbXNzvTzv01d0fxnXqKzlyUAy+XwRBe1KUUjsTrY7l60+zFDSHl/SGoK1u+NjnzcsMBYIyufLJBfsSt4WOwOQlbWUvGAdkgi5K6TAlSKH5x1o2iD92+2ayGAUNmdMl8CRTczQ2nMGOVbxpyY+dPuongLCnyPTxZv3XOfqXkGY13Xc3uAB6w2V7UzCtMlvcKrwoDXxTB7kJSwzA82PxY2rQSSBKn7Ix1l+yvWZaNdHezkSoadyZvBzTbsCtEK9OVu3Rci27s0AIMJUdspjQFBesI+vBydgcz7/9+o24koRfsSWL3OCZ4d+WO1blf2Mon4EqnaP+9QqIBOcW/NP598IfTvy22eCrY2p/4NVZadlTOtxMhRrKv51U9euAk28s0qZOU14Qodu/j7oDKOeF7mXYmMNQLQLrMOwNCv82CO35kVRuDPILHO3oCDIgdz+vkJ905uCv+FNq8VkUOMlIDgCs=
+    secure: Rn6tjq0oDDYnV+AYzu0mCwKUUwEGN8/+iNWfU8nwwF2VOgSRlkoL0BtJ+j5H0ZK4X7q4IydD8H2tMmkmqwt1cx6uFpNsvjgqO7WhadLfIgpZCe2M7++a6t9ZyZPZsk2p/lmj6o3u6MsSfyiA/Ux9RtuSGRXT7MTYlJafo4VSnlnUJmzhRTeM94h2XAMZZOucdPQGj/JahoB3LTBtHJLEzx8RaaFze12NAf2db8YyKTCK7wwdF57jS5B4jg4iOVMtlWDjVR0B4bKvwOUHiN+H+xTLaMOCSdrZS48Jo2Sb1LTvjyCWeHClw+HGDvMKgH3QXF8MWQzUdr4GdRqK2k+5Mv40F/hsElVCqrw8J0xi+a6NgL6swmqL0c9WdfQVIVfPOT3etnjAurwhhBERs1k4kJKPfwxItCRqixe5i/MWuPzSiIC+9Y+3ClacZLjUwqA4XEuyavdzPuUpadgGmWuV311RyHVRHkwvV43x6UC6VeGj6CddD3yF836JTxZz6x2yeTLMsnQdB5/8tEDRnmdrxpeL9qyEgVT6khnJcUUsxRy2yBsthO5qiYPU6duZ6SC0nXLHgGeVT0ZJaLJdVdyvfPaZvtOcQJfVfEcZx/XP0cI/u1GJGrBTg9wJkaTfDMmvHZdsnoDrWaogeqnOMq+FeILEwk6ws4zhKs7gTqmQ7Tc=
   on:
     tags: true
     repo: rthaut/angular-schema-form-panel
