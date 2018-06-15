@@ -10,8 +10,8 @@
   "scripts": {
     "debug": "gulp default",
     "build": "gulp minify",
-    "test:watch": "karma start",
-    "test": "karma start --log-level info --auto-watch false --single-run"
+    "test": "karma start --log-level info --auto-watch false --single-run",
+    "test:watch": "karma start"
   },
   "keywords": [
     "angular-schema-form",

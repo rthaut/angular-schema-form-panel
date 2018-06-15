@@ -7,7 +7,9 @@ sudo: false
 
 before_script:
 - npm install -g gulp-cli
-script: gulp minify
+script: npm run build
+after_script:
+- npm run test
 
 deploy:
   provider: npm
