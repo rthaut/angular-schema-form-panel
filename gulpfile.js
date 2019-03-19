@@ -8,24 +8,16 @@ var templateCache = require('gulp-angular-templatecache');
 var streamqueue = require('streamqueue');
 var fs = require('fs');
 
-gulp.task('default', ['minify', 'connect', 'watch']);
-
-gulp.task('connect', function () {
+gulp.task('connect', function _connect(done) {
     connect.server({
         root: ['demo', './'],
         livereload: true,
     });
+
+    done();
 });
 
-gulp.task('reload', ['minify'], function () {
-    gulp.src('./dist/**/*.*').pipe(connect.reload());
-});
-
-gulp.task('watch', function () {
-    gulp.watch(['./src/**/*.*', './demo/**/*.*'], ['reload']);
-});
-
-gulp.task('minify', function () {
+gulp.task('minify', function _minify() {
     var files = JSON.parse(fs.readFileSync('sources.json', 'utf-8'));
     var stream = streamqueue({
                 objectMode: true
@@ -44,3 +36,15 @@ gulp.task('minify', function () {
 
     return stream;
 });
+
+gulp.task('reload', gulp.series('minify', function _reload() {
+    return gulp.src('./dist/**/*.*').pipe(connect.reload());
+}));
+
+gulp.task('watch', function _watch(done) {
+    gulp.watch(['./src/**/*.*', './demo/**/*.*'], gulp.task('reload'));
+
+    done();
+});
+
+gulp.task('default', gulp.parallel('minify', 'connect', 'watch'));
