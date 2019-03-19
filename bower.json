@@ -26,9 +26,9 @@
   "dependencies": {
     "angular": "1.6.10",
     "angular-sanitize": "1.6.10",
-    "angular-schema-form": "^0.8.13",
-    "angular-schema-form-bootstrap": "^0.2.0",
-    "bootstrap": "^3.3.7",
+    "angular-schema-form": "0.8.13",
+    "angular-schema-form-bootstrap": "0.2.0",
+    "bootstrap": "3.3.7",
     "jquery": "1.9.1",
     "objectpath": "~1.1.0",
     "tv4": "1.0.17"
