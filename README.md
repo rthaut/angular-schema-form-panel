@@ -1,6 +1,6 @@
 # Angular Schema Form Bootstrap Panel Decorator v1.0.0
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/rthaut/angular-schema-form-panel.svg)](https://greenkeeper.io/)
+[![Renovate Status](https://badges.renovateapi.com/github/rthaut/angular-schema-form-panel)](https://renovatebot.com/)
 
 > Adds support for Bootstrap's custom [panel component](https://getbootstrap.com/docs/3.3/components/#panels) in [Angular Schema Form](https://github.com/json-schema-form/angular-schema-form)
 
