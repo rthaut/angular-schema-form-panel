@@ -39,7 +39,7 @@
     "gulp-angular-templatecache": "3.0.0",
     "gulp-concat": "2.6.1",
     "gulp-connect": "5.7.0",
-    "gulp-livereload": "4.0.1",
+    "gulp-livereload": "4.0.2",
     "gulp-rename": "1.4.0",
     "gulp-server-livereload": "1.9.2",
     "gulp-uglify": "3.0.2",
